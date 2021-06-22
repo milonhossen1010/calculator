@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <input type="button" id="theme-switcher" value="Change theme"></input>
+    <div id="calculator">
+        <header>
+            <label id="previous"></label>
+            <div id="current">
+                <div id="current-value">0</div>
+            </div>
+        </header>
+
+        <div id="keys">
+            <button onclick="all_clear()" id="all_clear">AC</button>
+            <button onclick="back()" id="clear">C</button>
+
+            <button onclick="calculate(1)" class="numbers">1</button>
+            <button onclick="calculate(2)" class="numbers">2</button>
+            <button onclick="calculate(3)" class="numbers">3</button>
+            <button onclick="calculate('/')" class="operators">/</button>
+
+            <button onclick="calculate(4)" class="numbers">4</button>
+            <button onclick="calculate(5)" class="numbers">5</button>
+            <button onclick="calculate(6)" class="numbers">6</button>
+            <button onclick="calculate('*')" class="operators">*</button>
+
+            <button onclick="calculate(7)" class="numbers">7</button>
+            <button onclick="calculate(8)" class="numbers">8</button>
+            <button onclick="calculate(9)" class="numbers">9</button>
+            <button onclick="calculate('+')" class="operators">+</button>
+
+            <button onclick="calculate(0)" class="numbers">0</button>
+            <button class="numbers">.</button>
+            <button onclick="total()" class="numbers">=</button>
+            <button onclick="calculate('-')" class="operators">-</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            document.documentElement.setAttribute("data-theme", "light");
+
+            var themeSwitcher = document.getElementById("theme-switcher");
+
+            themeSwitcher.onclick = function () {
+                var currentTheme = document.documentElement.getAttribute("data-theme");
+                var switchToTheme = currentTheme === "dark" ? "light" : "dark"
+                document.documentElement.setAttribute("data-theme", switchToTheme);
+            }
+        });
+    </script>
+</body>
+</html>

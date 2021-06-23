@@ -54,9 +54,11 @@ let total = () => {
 
     
     array.length=0;
+    array.push(int);
+     
     
 
-   console.log(array);
+  
 
 }
 
